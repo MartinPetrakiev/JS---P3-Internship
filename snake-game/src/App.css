@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+.app {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 98vh;
+    width: 100%;
+    background: papayawhip;
+}
+
+@keyframes flicker {
+    0%,
+    100% {
+        background: linear-gradient(
+            45deg,
+            red,
+            yellow,
+            lime,
+            aqua,
+            blue,
+            magenta,
+            red
+        );
+    }
+    50% {
+        background: linear-gradient(
+            45deg,
+            magenta,
+            blue,
+            aqua,
+            lime,
+            yellow,
+            red,
+            magenta
+        );
+    }
+}
+
+.disco {
+    background: linear-gradient(
+        45deg,
+        red,
+        yellow,
+        lime,
+        aqua,
+        blue,
+        magenta,
+        red
+    );
+    animation: flicker 0.6s steps(1) infinite;
+}
+
+.title {
+    font-size: 3em;
+    text-align: center;
+    color: darkslategrey;
+    z-index: 2;
+}
+
+.white-text {
+    color: white;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content {
+    font-size: 2em;
+    text-align: center;
+    color: darkslategrey;
+    margin-block-start: 0.6em;
+    margin-block-end: 0.6em;
+}
+
+@keyframes boardSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.disco-spin {
+    animation: boardSpin 50s linear infinite;
+}
+
+.game-board {
+    position: relative;
+    height: 40rem;
+    width: 40rem;
+    background: darkslategrey;
+}
+
+.button {
+    color: teal;
+    font-size: 1.8em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid teal;
+    border-radius: 3px;
+}
+
+.food-item {
+    position: absolute;
+    fill: yellow;
+    width: 200px;
+    height: 200px;
+}
+
+.obstacle {
+    position: absolute;
+    fill: black;
+    height: 32px;
+    width: 32px;
+}
+
+.snake-head {
+    fill: green;
+}
+
+.snake-tail {
+    fill: lime;
+}
+
+/* .snake-body {
+    fill: mediumseagreen;
+} */
+
+.snake-item {
+    position: absolute;
+    height: 32px;
+    width: 32px;
+}
+
+.instructions {
+    font-size: 1.3em;
+    padding: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    max-width: 640px;
+    background-color: rgb(136, 207, 168);
+    border-radius: 15px;
+}
+
+.key-symbol {
+    box-sizing: border-box;
+    line-height: 0.1em;
+    padding: 1em;
+    font-size: 22px;
+    text-align: center;
+    color: #555;
+    cursor: pointer;
+    margin: 0 8px;
+    height: 1.5em;
+    border-color: #f2f2f2;
+    border-style: solid;
+    text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+    border-width: 1px;
+    border-radius: 10px;
+    background: -webkit-linear-gradient(
+        top,
+        #f9f9f9 0%,
+        #d2d2d2 80%,
+        #c0c0c0 100%
+    );
+    font-family: sans-serif;
+    display: inline-block;
+    transition: box-shadow 0.3s ease, transform 0.15s ease;
+    box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #c0c0c0,
+        0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25),
+        -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
+}
+
+.game-history {
+    max-height: 220px;
+    max-width: 640px;
+    overflow-y: auto;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.game-history table {
+    border-collapse: collapse;
+    width: 70%;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.game-history table tr th,
+td {
+    padding: 10px;
+}
+
+.player-input-box {
+    margin-block-start: 2rem;
+}
+
+.player-input-box input {
+    font-size: 1.3em;
+    padding: 0.5em;
+    width: 100%;
+    border-radius: 15px;
+}
